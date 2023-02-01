@@ -24,19 +24,10 @@ class Monster extends Entity {
         super(name, health, strength, dexterity, defence, level, xp);
     }
 
-    generateContract() {
-        const contract = {
-            monsterName: this.name,
-            gold: this.gold,
-            earnedXP: this.XP_rewards
 
-        }
-
-        return contract
-    }
 }
 
 
 
 
-module.exports = { Monster, Player };
+module.exports = { Monster };

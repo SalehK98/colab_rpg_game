@@ -1,7 +1,6 @@
 // Monster and Player Entities
 class Entity {
     constructor(name, health, strength, dexterity, defence, level, xp) {
-
         this.name = name;
         this.health = health;
         this.strength = strength;
@@ -23,6 +22,8 @@ class Monster extends Entity {
         super(name, health, strength, dexterity, defence, level, xp);
 
     }
+
+
 }
 
 module.exports = { Monster, Player };

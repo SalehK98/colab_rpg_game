@@ -1,7 +1,4 @@
 /* css normalize */
-body {
-  margin: 0;
-}
 
 main {
   display: block;
@@ -51,11 +48,6 @@ a {
 }
 
 /* style */
-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .combat-screen {
   width: 100vw;
@@ -83,4 +75,31 @@ body {
   background-color: red;
   border: 1px solid black;
   border-radius: 20%;
+}
+
+.interactive {
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.interactive button {
+  height: 10%;
+  font-size: 1.3rem;
+}
+
+.move-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  border: 3px solid black;
+  text-align: center;
+}
+
+.move-info p {
+  margin: 0 1rem;
+  font-size: 1.2rem;
 }

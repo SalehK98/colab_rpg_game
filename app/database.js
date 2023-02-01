@@ -58,7 +58,7 @@ console.assert(db.read.monster.health == 42, "failed update");
 db.delete("monster", testMonster);
 console.assert(db.read.monster == undefined, "failed delete");
 
-/*testing contracts in local storage */
+/*testing contracts in local storage - will only work for a whole array of contracts, not one at a time */
 db.create("contracts", contracts);
 db.read.contracts;
 console.assert(

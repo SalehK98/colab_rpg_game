@@ -24,7 +24,7 @@ class Combat {
 
     determineStarter() {
         const playerRoll = this.rollD20();
-        const monsterRoll = rollD20();
+        const monsterRoll = this.rollD20();
         const playerScore = playerRoll + this.player.dexterity;
         const monsterScore = monsterRoll + this.monster.dexterity;
 
@@ -57,27 +57,29 @@ class Combat {
         return Math.floor(Math.random() * 20) + 1;
     }
 
-    runCombat() {
+    play() {
+        let starter = this.determineStarter();
+        console.log("STARTER IDENTITY:", starter)
+
         while (this.player.health > 0 && this.monster.health > 0) {
-            console.log("player health", this.player.health)
-            console.log("monster health", this.monster.health)
-
-            if (this.starter.health < 20) {
-                console.log("Do you want to use a potion? (y/n)");
-                const usePotion = prompt();
-                if (usePotion === "y") {
-                    this.usePotion();
-                }
-                console.log(`You attack the monster for ${this.attack(this.player, this.monster)} damage.`);
+            console.log("START ATTACK player health:", this.player.health)
+            console.log("START ATTACK:", this.monster.health)
+            const damage = this.attack(starter, starter === this.player ? this.monster : this.player);
+            if (starter === this.player) {
+                this.monster.health -= damage;
+                console.log("PLAYER MAKES DAMAGE OF:", this.player.health)
             } else {
-                console.log(`The monster attacks you for ${this.attack(this.monster, this.player)} damage.`);
+                this.player.health;
+                console.log("MONSTER MAKES DAMAGE OF:", this.player.health)
             }
+            starter = starter === this.player ? this.monster : this.player;
         }
-        console.log("combat ends - player health: ", this.player.health)
-        console.log("combat ends - monster health", this.monster.health)
-
+        console.log("AFTER COMBAT player health:", this.player.health)
+        console.log("AFTER COMBAT monster health:", this.monster.health)
+        return this.player > 0 ? this.player : this.monster;
     }
+
 }
 
 
-new Combat(player, monster).runCombat()
+new Combat(player, monster).play()

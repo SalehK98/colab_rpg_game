@@ -18,7 +18,7 @@ console.log(testMonster);
 db.create("monster", testMonster);
 console.assert(db.read.monster.name == testMonster.name, "failed create");
 db.read.monster;
-console.assert(db.read.monster == testMonster.name, "failed read");
+console.assert(db.read.monster.name == testMonster.name, "failed read");
 
 testMonster.life = 42;
 db.update("monster", testMonster);

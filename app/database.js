@@ -2,8 +2,12 @@
 //class Database with crud methods, gets objects and stores them
 class Database {
   constructor() {}
-  create() {}
-  get read() {}
+  create(key, instance) {
+    localStorage.setItem(key, JSON.stringify(instance));
+  }
+  get read() {
+    return { monster: JSON.parse(localStorage.getItem("monster")) };
+  }
   update() {}
   delete() {}
 }
@@ -11,13 +15,14 @@ class Database {
 let db = new Database();
 const testMonster = contracts[0].monster;
 console.log(testMonster);
-db.create(testMonster);
-console.assert(db.kaflef == blajelfaj);
-db.read.monsters;
-console.assert(db.kaflef == blajelfaj);
+db.create("monster", testMonster);
+console.assert(db.read.monster.name == testMonster.name, "failed create");
+db.read.monster;
+console.assert(db.read.monster == testMonster.name, "failed read");
 
-db.update(testMonster);
-console.assert(db.kaflef == blajelfaj);
+testMonster.life = 42;
+db.update("monster", testMonster);
+console.assert(db.read.monster.life == 42, "failed update");
 
-db.delete(testMonster);
-console.assert(db.kaflef == blajelfaj);
+db.delete("monster", testMonster);
+console.assert(db.read.monster == undefined, "failed delete");

@@ -1,0 +1,19 @@
+
+*{
+    margin: 0;
+}
+
+body {
+    background-color: lightblue;
+    background-image: url("../assets/create-char/background.jpg");
+}
+
+#create-char {
+    display: flex;
+
+}
+
+#create-char form{
+    display: flex;
+    flex-direction: column;
+}

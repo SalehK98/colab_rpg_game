@@ -8,8 +8,12 @@ class Database {
   get read() {
     return { monster: JSON.parse(localStorage.getItem("monster")) };
   }
-  update() {}
-  delete() {}
+  update(key, instance) {
+    this.create(key, instance);
+  }
+  delete(key, instance) {
+    localStorage.removeItem(key);
+  }
 }
 
 let db = new Database();
@@ -20,9 +24,9 @@ console.assert(db.read.monster.name == testMonster.name, "failed create");
 db.read.monster;
 console.assert(db.read.monster.name == testMonster.name, "failed read");
 
-testMonster.life = 42;
+testMonster.health = 42;
 db.update("monster", testMonster);
-console.assert(db.read.monster.life == 42, "failed update");
+console.assert(db.read.monster.health == 42, "failed update");
 
 db.delete("monster", testMonster);
 console.assert(db.read.monster == undefined, "failed delete");

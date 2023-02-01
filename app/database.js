@@ -9,7 +9,8 @@ class Database {
 }
 
 let db = new Database();
-
+const testMonster = contracts[0].monster;
+console.log(testMonster);
 db.create(Monster);
 console.assert(db.kaflef == blajelfaj);
 db.read(Monster);

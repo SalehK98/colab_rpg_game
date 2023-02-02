@@ -33,9 +33,9 @@ function getContracts(monsterNumber) {
 }
 
 const c = getContracts(5);
+const contractDiv = document.querySelector(`.contract-page`);
 
 function drawContracts(con) {
-    const contractDiv = document.querySelector(`.contract-page`);
     con.forEach((c) => {
         const contractElement = document.createElement(`div`);
         contractElement.classList.add(`contract`);

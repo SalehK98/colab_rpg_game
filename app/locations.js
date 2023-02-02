@@ -1,4 +1,4 @@
-const { getContracts } = require("./contract");
+import { getContracts } from "./contract.js";
 
 
 function createLocations() {
@@ -29,4 +29,6 @@ let [locations, contracts] = createLocations()
 // let contracts = result[1]
 console.log(locations);
 
-db.create("contract", result[1])
+// db.create("contract", result[1])
+
+export { createLocations }

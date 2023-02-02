@@ -32,6 +32,8 @@ function getContracts(monsterNumber) {
     return contracts;
 }
 
+const c = getContracts(5);
+
 function drawContracts(con) {
     const contractDiv = document.querySelector(`.contract-page`);
     con.forEach((c) => {
@@ -59,3 +61,5 @@ function drawContracts(con) {
         contractDiv.appendChild(contractElement);
     });
 }
+
+drawContracts(c);

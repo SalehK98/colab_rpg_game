@@ -1,4 +1,7 @@
-const { Monster } = require("./entities.js");
+import { Monster } from "./entities.js";
+
+const firstName = [`Angry`, `Lonely`, `Toxic`];
+const secondName = [`Spider`, `Zombie`, `Witch`];
 
 class Contract {
   constructor(monster) {
@@ -10,30 +13,55 @@ class Contract {
   }
 }
 
-const prefix = [`Angry`, `Lonely`, `Toxic`];
-const suffix = [`Spider`, `Zombie`, `Witch`];
-
 function getContracts(monsterNumber) {
-  const contracts = [];
-  for (let i = 0; i < monsterNumber; i++) {
-    const random1 = Math.floor(Math.random() * 3);
-    const random2 = Math.floor(Math.random() * 3);
-    const name = `${prefix[random1]} ${suffix[random2]}`;
-    const lvl = i + 1;
-    const hp = lvl * 15 + 50;
-    const str = 10 + lvl * 2;
-    const dex = 7 + lvl * 2;
-    const def = 10 * lvl;
-    const xp = lvl * 50;
-    const noob = new Monster(name, hp, str, dex, def, lvl, xp);
-    const quest = new Contract(noob);
-    contracts.push(quest);
-  }
-  return contracts;
+    const contracts = [];
+    for (let i = 0; i < monsterNumber; i++) {
+        const random1 = Math.floor(Math.random() * 3);
+        const random2 = Math.floor(Math.random() * 3);
+        const name = `${firstName[random1]} ${secondName[random2]}`;
+        const lvl = i + 1;
+        const hp = lvl * 15 + 50;
+        const str = 10 + lvl * 2;
+        const dex = 7 + lvl * 2;
+        const def = 10 * lvl;
+        const xp = lvl * 50;
+        const noob = new Monster(name, hp, str, dex, def, lvl, xp);
+        const quest = new Contract(noob);
+        contracts.push(quest);
+    }
+    return contracts;
 }
-// todo: if db.read.contracts then don't create new contracts, get from db
-const contracts = getContracts(7);
-// db.create('contracts', contracts)
-console.log(contracts);
+
+const contractDiv = document.querySelector(`.contract-page`);
+
+function drawContracts(con) {
+    con.forEach((c) => {
+        const contractElement = document.createElement(`div`);
+        contractElement.classList.add(`contract`);
+        const monsterImg = document.createElement(`img`);
+        monsterImg.src = `../assets/monster.jpg`;
+        const name = c.name;
+        const lvl = c.level;
+        const gold = c.gold;
+        const xp = c.xp;
+        const contractName = document.createElement(`p`);
+        const contractLevel = document.createElement(`p`);
+        const contractGold = document.createElement(`p`);
+        const contractXp = document.createElement(`p`);
+        contractName.textContent = `${name}`;
+        contractLevel.textContent = `Level: ${lvl}`;
+        contractGold.textContent = `Gold: ${gold}`;
+        contractXp.textContent = `Experience: ${xp}`;
+        contractElement.appendChild(monsterImg);
+        contractElement.appendChild(contractName);
+        contractElement.appendChild(contractLevel);
+        contractElement.appendChild(contractGold);
+        contractElement.appendChild(contractXp);
+        contractDiv.appendChild(contractElement);
+    });
+}
+
+
 
 module.exports = { getContracts };
+

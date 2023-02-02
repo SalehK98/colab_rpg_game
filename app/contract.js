@@ -31,6 +31,7 @@ function getContracts(monsterNumber) {
   }
   return contracts;
 }
-
+// todo: if db.read.contracts then don't create new contracts, get from db
 const contracts = getContracts(7);
+// db.create('contracts', contracts)
 console.log(contracts);

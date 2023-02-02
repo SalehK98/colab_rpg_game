@@ -4,13 +4,13 @@ const firstName = [`Angry`, `Lonely`, `Toxic`];
 const secondName = [`Spider`, `Zombie`, `Witch`];
 
 class Contract {
-    constructor(monster) {
-        this.monster = monster;
-        this.name = monster.name;
-        this.level = monster.level;
-        this.gold = monster.level * 25;
-        this.xp = monster.xp;
-    }
+  constructor(monster) {
+    this.monster = monster;
+    this.name = monster.name;
+    this.level = monster.level;
+    this.gold = monster.level * 25;
+    this.xp = monster.xp;
+  }
 }
 
 function getContracts(monsterNumber) {
@@ -60,3 +60,8 @@ function drawContracts(con) {
         contractDiv.appendChild(contractElement);
     });
 }
+
+
+
+module.exports = { getContracts };
+

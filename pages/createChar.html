@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Character</title>
-    <link rel="stylesheet" href="../css/createChar.css">
-</head>
+    <link rel="stylesheet" href="../css/createChar.css" />
+  </head>
 
-<body>
-    <h1>Create Your Character<br></h1>
+  <body>
+    <h1>Create Your Character<br /></h1>
     <div id="create-char">
-        <form>
-            <label for="player-name">Player Name</label>
-            <input type="text" name="player-name" id="player-name">
-            <label for="strength">Strength</label>
-            <input type="number" name="strength" id="strength">
-            <label for="Defense">Defense</label>
-            <input type="number" name="defense" id="defense">
-            <label for="dexterity">Dexterity</label>
-            <input type="number" name="dexterity" id="dexterity">
-            <input type="submit" name="submit" id="submit-create" value="Create Player">
-        </form>
-        <div id="char-img">
-            <img src="" alt="">
-            <!-- <div id="choice-buttons">
+      <form>
+        <label for="player-name">Player Name</label>
+        <input type="text" name="player-name" id="player-name" />
+        <label for="strength">Strength</label>
+        <input type="number" name="strength" id="strength" />
+        <label for="Defense">Defense</label>
+        <input type="number" name="defense" id="defense" />
+        <label for="dexterity">Dexterity</label>
+        <input type="number" name="dexterity" id="dexterity" />
+        <input
+          type="submit"
+          name="submit"
+          id="submit-create"
+          value="Create Player"
+        />
+      </form>
+      <div id="char-img">
+        <img src="" alt="" />
+        <!-- <div id="choice-buttons">
                 <button>Left</button>
                 <button>Right</button>
             </div> -->
-        </div>
+      </div>
     </div>
-    <script src="../app/createChar.js"></script>
-</body>
-
+    <script type="module" src="../app/createChar.js"></script>
+  </body>
 </html>

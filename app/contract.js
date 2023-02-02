@@ -1,4 +1,4 @@
-// const { Monster } = require("./entities.js");
+const { Monster } = require("./entities.js");
 
 class Contract {
   constructor(monster) {
@@ -34,3 +34,5 @@ function getContracts(monsterNumber) {
 
 const contracts = getContracts(7);
 console.log(contracts);
+
+module.exports = { getContracts };

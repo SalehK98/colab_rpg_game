@@ -7,6 +7,7 @@ class Entity {
     this.dexterity = dexterity;
     this.defense = defense;
     this.level = level;
+    this.xp = xp
   }
 }
 
@@ -23,4 +24,4 @@ class Monster extends Entity {
   }
 }
 
-// module.exports = { Monster, Player };
+module.exports = { Monster, Player };

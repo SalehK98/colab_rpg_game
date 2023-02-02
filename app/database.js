@@ -40,3 +40,5 @@ class Database {
     localStorage.removeItem(key); //TODO: fix
   }
 }
+
+let db = new Database();

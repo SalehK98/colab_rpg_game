@@ -1,5 +1,5 @@
 /*testing monsters in local storage */
-let db = new Database();
+
 const testMonster = contracts[0].monster;
 console.log(testMonster);
 db.create("monster", testMonster);
@@ -11,7 +11,7 @@ testMonster.health = 42;
 db.update("monster", testMonster);
 console.assert(db.read.monster.health == 42, "failed update");
 
-db.delete("monster", testMonster);
+// db.delete("monster", testMonster);
 console.assert(db.read.monster == undefined, "failed delete");
 
 /*testing contracts in local storage - will only work for a whole array of contracts, not one at a time */

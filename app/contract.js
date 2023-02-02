@@ -32,7 +32,6 @@ function getContracts(monsterNumber) {
     return contracts;
 }
 
-const c = getContracts(5);
 const contractDiv = document.querySelector(`.contract-page`);
 
 function drawContracts(con) {
@@ -61,5 +60,3 @@ function drawContracts(con) {
         contractDiv.appendChild(contractElement);
     });
 }
-
-drawContracts(c);

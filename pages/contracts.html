@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&family=Poppins&family=Roboto&family=Rubik:ital@1&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Contracts</title>
+    <style>
+        body {
+            font-family: 'Russo One', sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            background-color: #E5E5CB;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .contract-page {
+            display: grid;
+            align-self: center;
+            justify-self: center;
+            grid-template-columns: repeat(3, 1fr);
+            height: 100%;
+            width: 100%;
+        }
+        .contract {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            align-items: center;
+            height: 30%;
+            width: 30%;
+        }
+
+        .contract p {
+            font-size: 1rem;
+            margin: .1rem;
+            color: #1A120B;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contract-page"></div>
+    <script type="module" src="../app/contract.js"></script>
+</body>
+</html>

@@ -32,3 +32,4 @@ console.log(locations);
 // db.create("contract", result[1])
 
 export { createLocations }
+//s

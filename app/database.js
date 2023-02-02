@@ -5,7 +5,7 @@
 class Database {
   /**
    *
-   * @param {"monster"|"contracts"|"locations"} key
+   * @param {"monster"|"contracts"|"locations"|"player"|"current"} key
    * @param {any} instance
    */
   create(key, instance) {
@@ -22,11 +22,13 @@ class Database {
       monster: this.fetch("monster"),
       contracts: this.fetch("contracts"),
       locations: this.fetch("locations"),
+      player: this.fetch("player"),
+      current: this.fetch("current")
     };
   }
   /**
    *
-   * @param {"monster"|"contracts"|"locations"} key
+   * @param {"monster"|"contracts"|"locations"|"player"|"current"} key
    * @param {any} instance
    */
   update(key, instance) {
@@ -34,11 +36,14 @@ class Database {
   }
   /**
    *
-   * @param {"monster"|"contracts"|"locations"} key
+   * @param {"monster"|"contracts"|"locations"|"player"|"current"} key
    */
   delete(key, instance) {
     localStorage.removeItem(key); //TODO: fix
   }
 }
 
-export default db = new Database();
+const db = new Database()
+
+export default db
+// module.exports = db

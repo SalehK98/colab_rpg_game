@@ -1,3 +1,4 @@
+import db from "./database.js";
 import { Monster } from "./entities.js";
 
 const firstName = [`Angry`, `Lonely`, `Toxic`];
@@ -61,7 +62,16 @@ function drawContracts(con) {
   });
 }
 
+console.log(typeof db.read.current);
+
+let contracts = getContracts(db.read.current)
+
+drawContracts(contracts)
 
 
+let myContracts = document.getElementsByClassName("contract")
+
+myContracts.forEach(el => {
+  el.addEventListener("click", console.log("clicked"))
+})
 export { getContracts };
-

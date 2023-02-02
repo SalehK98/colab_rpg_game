@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>Create Character</title>
     <link rel="stylesheet" href="../css/createChar.css">
 </head>
+
 <body>
-    <h1>Create Your Character</h1>
+    <h1>Create Your Character<br></h1>
     <div id="create-char">
         <form>
             <label for="player-name">Player Name</label>
@@ -19,15 +21,17 @@
             <input type="number" name="defense" id="defense">
             <label for="dexterity">Dexterity</label>
             <input type="number" name="dexterity" id="dexterity">
-            <input type="submit" name="submit" id="submit" value="Create Player">
+            <input type="submit" name="submit" id="submit-create" value="Create Player">
         </form>
         <div id="char-img">
             <img src="" alt="">
-            <div id="choice-buttons">
+            <!-- <div id="choice-buttons">
                 <button>Left</button>
                 <button>Right</button>
-            </div>
+            </div> -->
         </div>
     </div>
+    <script src="../app/createChar.js"></script>
 </body>
+
 </html>

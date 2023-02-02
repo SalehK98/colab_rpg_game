@@ -1,19 +1,22 @@
-
-*{
+* {
     margin: 0;
 }
 
 body {
-    background-color: lightblue;
+    height: 90vh;
     background-image: url("../assets/create-char/background.jpg");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #create-char {
     display: flex;
-
 }
 
-#create-char form{
+#create-char form {
     display: flex;
     flex-direction: column;
 }

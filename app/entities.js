@@ -24,4 +24,5 @@ class Monster extends Entity {
     }
 }
 
-module.exports = { Monster, Player };
+// module.exports = { Monster, Player };
+export { Monster };

@@ -41,4 +41,4 @@ class Database {
   }
 }
 
-let db = new Database();
+export default db = new Database();

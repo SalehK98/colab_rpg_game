@@ -1,3 +1,5 @@
+import db from './database.js'
+
 // player = {
 //     Strength: 5,
 //     Dex: 2,
